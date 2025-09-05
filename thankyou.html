@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You 🎉</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      overflow: hidden;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    .glitter {
+      position: absolute;
+      font-size: 20px;
+      animation: sparkle 5s linear infinite;
+    }
+    @keyframes sparkle {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen text-center">
+
+  <div class="text-6xl">YAYAYAYAYA!!! 🎉🎉🎉</div>
+  <div class="text-3xl mt-4">THANK YOU 💛 THANK YOU 💚 THANK YOU 💜</div>
+
+  <script>
+    const sparkles = ["✨","💖","🌟","💫","⭐"];
+    function createSparkle() {
+      const glitter = document.createElement('div');
+      glitter.className = 'glitter';
+      glitter.innerHTML = sparkles[Math.floor(Math.random() * sparkles.length)];
+      glitter.style.left = Math.random() * 100 + 'vw';
+      glitter.style.animationDuration = 2 + Math.random() * 3 + 's';
+      glitter.style.fontSize = 15 + Math.random() * 25 + 'px';
+      document.body.appendChild(glitter);
+      setTimeout(() => glitter.remove(), 5000);
+    }
+    setInterval(createSparkle, 300);
+  </script>
+
+</body>
+</html>
